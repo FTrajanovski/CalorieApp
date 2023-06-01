@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1 class="text-center">Welcome to the Calorie App</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="get" action="/Food/Search">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Search for Food" />
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (Model != null && Model.Foods != null && Model.Foods.Any())
+    {
+        <div class="row mt-4">
+            <div class="col">
+                <h2>Search Results</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var food in Model.Foods)
+                        {
+                            <tr>
+                                <td>@food.Name</td>
+                                <td>@food.Calories</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+</div>
