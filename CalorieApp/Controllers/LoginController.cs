@@ -37,13 +37,13 @@ namespace ProjektHB.Controllers
                 }
                 else
                 {
-                    //Om inloggning OK skickas man till adminsidan
+                    //Om inloggning OK skickas man till admin sidan
                     return RedirectToAction("Admin", "Burger");
                 }
             }
             else
             {
-                //om inte OK visas ErrorMessage
+                //Om inte OK visas ErrorMessage
                 ViewBag.ErrorMessage = "Inloggning inte godkänt!";
             }
             return View();

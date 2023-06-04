@@ -79,8 +79,16 @@
         <img src="~/Bilder1/kartan6.jpg" />
 
         <div class="w3-display-middle w3-large">
-            <a style="text-shadow: 1px 1px #212121;" href="https://googlemaps.com;">Hitta hit</a>
+            <span style="text-shadow: 1px 1px #212121; color: #FF9800;">To find directions, please </span>
+            <span style="text-decoration: underline; cursor: pointer; color: #FF9800;" onclick="openLink('https://googlemaps.com');">click here</span>.
         </div>
+
+        <script>
+            function openLink(url) {
+                window.open(url, "_blank");
+            }
+        </script>
+
     </div>
 </body>
 </html>
